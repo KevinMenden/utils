@@ -108,6 +108,7 @@ utils.ewce.plot <- function(total_res,mtc_method="bonferroni"){
   the_plot = the_plot  +
     theme(plot.margin=unit(c(1,0,0,0),"mm"),axis.text.x = element_text(angle = 55, hjust = 1, size = 15))+
     theme(panel.border = element_rect(colour = "black", fill=NA, size=1))+
+    theme(panel.grid.major=element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank())+
     xlab("") +
     theme(strip.text.y = element_text(angle = 0)) +
     coord_cartesian(ylim = c(0,1.1*upperLim))+

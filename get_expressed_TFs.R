@@ -28,11 +28,14 @@ cage_expression <- args[1]
 row_sum_cutoff <- as.numeric(args[2])
 motif_dir <- args[3]
 output <- args[4]
-# 
-# row_sum_cutoff = 500
-# motif_dir = "~/resources/TF_interactions/JASPAR/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar/"
-# cage_expression = "~/rimod/CAGE/cage_analysis/CAGE_annotated_counts_from_ct_2018-03-06_08.36.39/merged_annot_gene_counts_2018-03-06_08.36.39.txt"
-# output = "expressed_TFs.txt"
+
+
+## For testing
+#setwd("~/rimod/CAGE/temporal/")
+#cage_expression <- "cage_temporal_3kbgr_aggr.txt"
+#row_sum_cutoff <- 500
+#motif_dir <- "~/resources/TF_interactions/JASPAR/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar/"
+#output <- "tfs_test.txt"
 
 
 # Load expression data 
@@ -103,4 +106,4 @@ for (tf in tf_comp){
 # Save result
 all_expr_tfs <- c(tfs_sgl_expr, tf_comp_expr)
 print(paste("Found ", as.character(length(all_expr_tfs)), " expressed TFs", sep=""))
-write.table(all_expr_tfs, output, row.names = FALSE, quote = F)
+write.table(all_expr_tfs, output, row.names = FALSE, quote = F, col.names = FALSE)
